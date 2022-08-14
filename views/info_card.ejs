@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css" rel="stylesheet">
+  <link href="css/stylee.css" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap" rel="stylesheet">
+
+  <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+
+  <nav class=" flex items-center  flex-wrap  " id="nav2">
+    <div class="c-subscribe-box ">
+      <div class="rainbow"><span></span><span></span></div>
+      <div class="c-subscribe-box__wrapper">
+
+        <div class="flex items-center ">
+          <div>
+            <img src="img/logo.png" alt="Girl in a jacket" width="150" height="200">
+          </div>
+          <div>
+            <span class="info_title  grid grid-cols-3 divide-x">Ganesh Murti</span>
+
+            <div class="menu mt-3  ">
+                <a href="/" class="block border-dotted border-2 border-indigo-600 rounded-md m-2">
+                    Home
+                  </a>
+            
+                  <a href="/book" class="block   m-2 border-dotted border-2 border-indigo-600 rounded-md">
+                    book
+                  </a>
+                  <a href="/contact" class="block m-2 border-dotted border-2 border-indigo-600 rounded-md">
+                    Contact </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+    
+<!-- <div id="info_img">
+    <img src="img/logo.png">
+</div>
+ 
+<div >
+    <h1 class="bottomside">maharah</h1>
+</div> -->
+
+<div class=" mt-8 info_img w-full md:w-70   border-dotted border-2 border-gray-900 rounded-md  px-2 mx-auto">
+    <img class=" info_img" src=" <%= item.img %>">
+
+    <div class="text-center">
+      <h2 class="mb-2 text-lg bottomside">
+        <%= item.name %>
+      </h2>
+      <div class="flex item-center justify-around ">
+
+        <span class="font-bold text-lg">₹  <%= item.price %> </span>
+
+      </div>
+    </div>
+
+    <div class="w-full ">
+        <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" method="post" action="/submit_data">
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                तुमचे नाव
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="नाव" name="name">
+          </div>
+
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                तुमचा मोबाईल क्र            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="मोबाईल" name="mobile">
+          </div>
+
+          <input type="hidden" name="id" value="<%= item.id %>">
+
+          <div class="flex items-center justify-between">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+              Book Now
+            </button>
+            <p class="text-red-500 text-xs italic">कृपया सर्व माहिती भरा</p>
+
+          </div>
+        </form>
+    
+      </div>
+
+
+
+
+      <footer class="footer p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800">
+        <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© Copyright <a href="" class="hover:underline">Harshad Salunke </a>.2022 All Rights Reserved.
+        </span>
+        <ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0 mx-auto">
+            <li>
+                <a href="#" class="mr-4 hover:underline md:mr-6 ">Made With  ❤️ By  Harshad Salunke</a>
+            </li>
+           
+        </ul>
+      </footer>
+  </div>
+
+
+
+
+</body>
+</html>

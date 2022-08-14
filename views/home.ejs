@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css" rel="stylesheet">
+  <link href="css/stylee.css" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap" rel="stylesheet">
+
+  <title>Document</title>
+</head>
+
+<body>
+
+  <% if(first){ %>
+  <div id="splash" class="cover">
+
+    <div id="icon" >
+      <img src="img/splash_ganesh.png">
+      <h3 class="bottomright">Made With  ❤️ By <br> Harshad Salunke</h3>
+    </div>
+  </div>
+
+<% } %>
+
+
+
+  <nav class=" flex items-center  flex-wrap  " id="nav">
+    <div class="c-subscribe-box ">
+      <div class="rainbow"><span></span><span></span></div>
+      <div class="c-subscribe-box__wrapper">
+
+        <div class="flex items-center ">
+          <div>
+            <img src="img/logo.png" alt="Girl in a jacket" width="150" height="200">
+          </div>
+          <div>
+            <span class="title  grid grid-cols-3 divide-x">Ganesh Murti</span>
+
+            <div class="menu mt-3  ">
+              <a href="/" class="block border-dotted border-2 border-indigo-600 rounded-md m-2">
+                Home
+              </a>
+        
+              <a href="/book" class="block   m-2 border-dotted border-2 border-indigo-600 rounded-md">
+                book
+              </a>
+              <a href="/contact" class="block m-2 border-dotted border-2 border-indigo-600 rounded-md">
+                Contact </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+<section class="mt-6">
+
+  <div id="ganesh-filter" class=" ">
+
+    <form method="post" id="tableForm" action="/selected">
+      <select name="example" id="select" type="submit"
+        class="example border-dotted border-2 border-indigo-600 px-10 py-5 rounded-full ">
+        <%if(selected_name!=""){%>
+          <option class="select_ele" type="submit" value=""><%=selected_name %> गणपती</option>
+       <% } %>
+        <option class="select_ele" type="submit" value="सर्व">निवडा</option>
+        <option class="select_ele" value="सर्व">सर्व गणपती</option>
+        <option class="select_ele" value="पेशवे">पेशवे</option>
+        <option class="select_ele" value="hamster">Hamster</option>
+        <option class="select_ele" value="parrot">Parrot</option>
+        <option class="select_ele" value="spider">Spider</option>
+        <option class="select_ele" value="goldfish">Goldfish</option>
+      </select>
+      
+      <button type="submit" class='mt-4 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-7 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'>
+        <span>शोधा</span>
+      </button>
+    </form>
+
+
+  </div>
+
+</section>
+
+
+<section class="menu container mx-auto">
+  <h1 class="text-xl font-bold mb-8"> सर्व <%=selected_name %> गणपती</h1>
+
+  <div class="grid  gap-x-8 gap-y-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  mb-2">
+    <% if(newListItems.length==0){ %>
+      <h1>Not Available </h1>
+   <% } %>
+
+
+    <% for(var i=0;i<newListItems.length;i++){ %>
+      <!-- card view -->
+      <div class=" murtis_card w-full md:w-70   border-dotted border-2 border-gray-900 rounded-md py-2 px-2">
+        <img class=" h-40 mb-4 mx-auto" src="<%=newListItems[i].img %>">
+
+        <div class="text-center">
+          <h2 class="info_title text-lg">
+            <%= newListItems[i].name%>
+          </h2>
+          <span class="feet px-4 rounded-full text-xs"> <%=newListItems[i].feet %> फुट </span>
+          <div class="flex item-center justify-around mt-2">
+
+            <span class=" font-bold text-lg">₹ <%=newListItems[i].price %></span>
+
+            <form action="/card_selected" method="post">
+              <button type="submit" class="book_now py-1 px-6 rounded-full">
+                <span>अजून पहा</span>
+              </button>
+              <input type="hidden" name="selected_id" value="<%=i %>">
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+
+      <% } %>
+        <!-- card view ended -->
+
+
+
+</section>
+
+
+
+<footer id="footer2" class="  p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800">
+  <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© Copyright <a href="" class="hover:underline">Harshad Salunke </a>.2022 All Rights Reserved.
+  </span>
+  <ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0 mx-auto">
+      <li>
+          <a href="#" class="mr-4 hover:underline md:mr-6 ">Made With  ❤️ By  Harshad Salunke</a>
+      </li>
+     
+  </ul>
+</footer>
+
+
+<% if(first) { %>
+<script>
+
+  setTimeout(() => {
+  const nav = document.getElementById('nav');
+  nav.style.display = 'inline-block'
+  const splash = document.getElementById('splash')
+  splash.style.display = 'none'
+  const footers=document.getElementById('footer2')
+  footers.style.display = 'inline-block'
+
+}, 4000);
+
+
+</script>
+<% } %>
+
+<% if(!first) { %>
+  <script>
+      const nav = document.getElementById('nav');
+    nav.style.display = 'inline-block'
+    const splash = document.getElementById('splash')
+    splash.style.display = 'none'
+    const footers=document.getElementById('footer2')
+    footers.style.display = 'inline-block'
+  
+  </script>
+  <% } %>
+
+</body>
+
+</html>
