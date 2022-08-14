@@ -17,7 +17,7 @@
 
 <body>
 
-  <% if(first){ %>
+  <!-- <% if(first){ %> -->
   <div id="splash" class="cover">
 
     <div id="icon" >
@@ -26,7 +26,7 @@
     </div>
   </div>
 
-<% } %>
+<!-- <% } %> -->
 
 
 
@@ -43,14 +43,14 @@
             <span class="title  grid grid-cols-3 divide-x">Ganesh Murti</span>
 
             <div class="menu mt-3  ">
-              <a href="/" class="block border-dotted border-2 border-indigo-600 rounded-md m-2">
+              <a href="/" class="block border-line border-2 border-indigo-600 rounded-md m-2">
                 Home
               </a>
         
-              <a href="/book" class="block   m-2 border-dotted border-2 border-indigo-600 rounded-md">
+              <a href="/book" class="block   m-2 border-line border-2 border-indigo-600 rounded-md">
                 book
               </a>
-              <a href="/contact" class="block m-2 border-dotted border-2 border-indigo-600 rounded-md">
+              <a href="/contact" class="block m-2 border-line border-2 border-indigo-600 rounded-md">
                 Contact </a>
             </div>
           </div>
@@ -66,7 +66,7 @@
 
     <form method="post" id="tableForm" action="/selected">
       <select name="example" id="select" type="submit"
-        class="example border-dotted border-2 border-indigo-600 px-10 py-5 rounded-full ">
+        class="example border-line border-2 border-indigo-600 px-10 py-2 rounded-md ">
         <%if(selected_name!=""){%>
           <option class="select_ele" type="submit" value=""><%=selected_name %> गणपती</option>
        <% } %>
@@ -101,20 +101,20 @@
 
     <% for(var i=0;i<newListItems.length;i++){ %>
       <!-- card view -->
-      <div class=" murtis_card w-full md:w-70   border-dotted border-2 border-gray-900 rounded-md py-2 px-2">
-        <img class=" h-40 mb-4 mx-auto" src="<%=newListItems[i].img %>">
+      <div class=" murtis_card w-50 md:w-70    rounded-md ">
+        <img class=" h-40 mt-2 mb-4 mx-auto" src="<%=newListItems[i].img %>">
 
         <div class="text-center">
           <h2 class="info_title text-lg">
             <%= newListItems[i].name%>
           </h2>
-          <span class="feet px-4 rounded-full text-xs"> <%=newListItems[i].feet %> फुट </span>
+          <span class="feet  rounded-full text-xs"> <%=newListItems[i].feet %> फुट </span>
           <div class="flex item-center justify-around mt-2">
 
-            <span class=" font-bold text-lg">₹ <%=newListItems[i].price %></span>
+            <span class=" font-bold text-lg ">₹ <%=newListItems[i].price %></span>
 
             <form action="/card_selected" method="post">
-              <button type="submit" class="book_now py-1 px-6 rounded-full">
+              <button type="submit" class="book_now py-1 px-6 rounded-full mb-2">
                 <span>अजून पहा</span>
               </button>
               <input type="hidden" name="selected_id" value="<%=i %>">

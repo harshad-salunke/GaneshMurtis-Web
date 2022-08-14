@@ -7,7 +7,7 @@ body{
 }
 .title{
     color: black;
-    font-size: 30px;
+    font-size: 25px;
     display: block;
     font-family: 'Rubik Distressed', cursive;
     
@@ -186,7 +186,7 @@ body{
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
   font-style: italic;
-  font-size: 20px;
+  font-size: 10px;
 }
 
 #select{
@@ -243,6 +243,7 @@ body{
 
 .murtis_card{
   background-color: white;
+   border: black solid 2px;
 }
 
 /* splash screen */
